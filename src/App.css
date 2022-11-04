@@ -1,0 +1,61 @@
+main {
+  background-color: black;
+  text-align: center;
+  vertical-align: center;
+/*   line-height: 100vh */
+}
+
+
+.header{
+  color: white;
+}
+
+
+.counter--count--background{
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  background-color: #0d54a0;
+  border: 1px solid #000;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bolder;
+  margin: auto;
+}
+
+.counter--result{
+   color: #e6d1d1;
+}
+
+.counter--minus, .counter--plus{
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background: #c1bdbd;
+/*   border: 1px solid #000; */
+  margin: 60px auto 0px;
+  font-size: 25px;
+}
+
+.counter--set, .counter--reset{
+  border-radius: 5px;
+  height: 25px;
+  background: #c1bdbd;
+}
+
+.counter--minus:hover, .counter--plus:hover, .counter--set:hover, .counter--reset:hover{
+  background: #629af4;
+}
+
+table, td{
+  text-align: center;
+  margin: 3px auto;
+/*   border: 1px solid black; */
+}
+
+.num_input{
+  width: 60px;
+  height: 25px;
+  border-radius: 5px;
+  font-size: 20px;
+}
