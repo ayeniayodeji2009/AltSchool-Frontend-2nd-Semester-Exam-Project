@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
+import {BrowserRouter, Routes, Route, NavLink, useNavigate} from "react-router-dom";
 import './App.css';
+import Navigation from './Navigation';
 
 
 
@@ -62,6 +64,7 @@ export default function CounterApp() {
 
   return (
     <main>
+     {/* <Navigation /> */}
       <header>
         <h1 className="header">AltSchool Frontend 2nd Semester Examination Project</h1>
       </header>
