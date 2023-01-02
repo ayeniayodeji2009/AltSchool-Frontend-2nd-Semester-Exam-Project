@@ -5,6 +5,7 @@ import './App.css';
 import ErrorBoundary from './ErrorBoundary';
 import PageNotFound from './PageNotFound';
 import CounterApp from './CounterApp';
+//import Counter from './Counter';
 
 
 
@@ -21,6 +22,7 @@ export default function App() {
           <Route index element={
             <ErrorBoundary>
               <CounterApp />
+              {/* <Counter /> */}
             </ErrorBoundary>
           } />
 

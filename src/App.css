@@ -47,6 +47,17 @@ main {
   background: #629af4;
 }
 
+.show-counter-app{
+  margin: 80px auto;
+  padding: 25px;
+  font-size: 20px;
+}
+
+.hide-counter-app{
+ margin: 10px auto 40px;
+ font-size: 15px
+}
+
 table, td{
   text-align: center;
   margin: 3px auto;

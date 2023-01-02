@@ -11,7 +11,12 @@ export default function CounterApp() {
   const [counter, setCounter] = useState(0);
   const [display, setDisplay] = useState(false);
   const [showBtn, setShowBtn] = useState(true);
+  const [newNum, setNewNum] = useState(0);
+  const [hideCounter, setHideCounter] = useState(true);
 
+  // const handleHideCounter = () => {
+  //   setHideCounter(setHideCounter => setHideCounter = false)
+  // }
 
   const handleDisplay = () => {
     setDisplay(prevDisplay => prevDisplay = true)
@@ -32,35 +37,31 @@ export default function CounterApp() {
   }
 
 
-
-
-  {/*setCounter(prevCount => prevCount = document.getElementById('quantity').vaule)*/ }
-
-  {/* */ }
-
-
   //set value
-  function getValue(val) {
-    //  val.preventDefault()
-    console.log(val.target.value)
-
-    let setVal = val.target.value;
+   const handleInputNewNum = (event) => {
+     event.preventDefault()
+    const setValEvent = event.target.value;
     console.log("Input value is now a " + typeof setVal)
+    const convertSetValToNum = parseInt(setValEvent, 10); //input converted to number on 10 as the radix
+    setNewNum( newNum => newNum = convertSetValToNum );
+  };
 
-    const convertSetValToNum = parseInt(setVal, 10) //input converted to number on 10 as the radix number system
-    console.log("Input value is now a " + typeof convertSetValToNum)
-    setCounter(prevCount => prevCount = convertSetValToNum)
-  }
+  //set value pass to counter
+   const handleBtnClickNewNum = () => {
+          event.preventDefault()
+    console.log('>>>>', newNum);
+         console.log(typeof newNum);
+     setCounter(prevCount => prevCount = newNum)
+  };
 
-
-  function Btn() {
-    return (
-      <>
-        <input type="number" max="99999" onChange={getValue} />
-        {/*   <button className="counter--set" onClick={e => {setShowBtn(true)}}>Cancel</button> */}
-      </>
-    )
-  }
+  // function Btn() {
+  //   return (
+  //     <>
+  //       <input type="number" max="99999" onChange={getValue} />
+  //       {/*   <button className="counter--set" onClick={e => {setShowBtn(true)}}>Cancel</button> */}
+  //     </>
+  //   )
+  // }
 
   return (
     <main>
@@ -69,7 +70,13 @@ export default function CounterApp() {
         <h1 className="header">AltSchool Frontend 2nd Semester Examination Project</h1>
       </header>
       <section>
-        <table>
+        { hideCounter ? (
+          <>
+          <button className="counter--set show-counter-app" onClick={e => { setHideCounter(false) }}>Show Counter App</button>
+          </>
+        ) : (
+      <>
+      <table>
           <tbody>
             <tr>
               <td></td>
@@ -79,8 +86,11 @@ export default function CounterApp() {
                   <button className="counter--set" onClick={e => { setShowBtn(false) }}>Set Value</button>
                 ) : (
                   <>
-                    <input type="number" className="num_input" onChange={getValue} />
                     <button className="counter--set" onClick={e => { setShowBtn(true) }}>Cancel</button>
+                    <br />
+                    <input type="number" className="num_input" onChange={handleInputNewNum} />
+                    <br />
+                    {/**/}    <button className="counter--set" onClick={handleBtnClickNewNum}>Pass Value</button>
                   </>
                 )
                 }
@@ -105,18 +115,11 @@ export default function CounterApp() {
             </tr>
           </tbody>
         </table>
-
-        {/*
-        <input type="number" max="99999" onChange={getValue} />
-        
-         <div className="counter">
-        <button className="counter--minus" onClick={subtract}>-</button>
-        <div className="counter--count--background">
-        <h1>{counter}</h1>
-        </div>
-        <button className="counter--plus" onClick={add}>+</button>
-      </div>
-        */}
+      
+      <button className="counter--set hide-counter-app" onClick={e => { setHideCounter(true) }}>Hide Counter App</button>
+    </>
+        )}
+      
       </section>
     </main>
   )
