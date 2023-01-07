@@ -7,4 +7,4 @@ Setup a custom counter hook with increment, decrement, reset, setValue functions
 
 
 ### Solution to Question above:
-https://63676a9d73e5ca1eefa4f5a5--zingy-praline-751efc.netlify.app/
+https://zingy-praline-751efc.netlify.app/

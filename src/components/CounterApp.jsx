@@ -1,19 +1,24 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import {BrowserRouter, Routes, Route, NavLink, useNavigate} from "react-router-dom";
-import './App.css';
+import '../App.css';
+
+
 import Navigation from './Navigation';
 
 
 
 export default function CounterApp() {
 
-  const [counter, setCounter] = useState(0);
-  const [display, setDisplay] = useState(false);
-  const [showBtn, setShowBtn] = useState(true);
-  const [newNum, setNewNum] = useState(0);
-  const [hideCounter, setHideCounter] = useState(true);
 
+  
+  const [counter, setCounter] = useState(0);  //display of counter
+  const [showBtn, setShowBtn] = useState(true);  //set value show/hide button
+  const [newNum, setNewNum] = useState(0); //set value new number
+  const [hideCounter, setHideCounter] = useState(true); //counter app show/hide button
+
+
+  
   // const handleHideCounter = () => {
   //   setHideCounter(setHideCounter => setHideCounter = false)
   // }
@@ -26,6 +31,7 @@ export default function CounterApp() {
   const subtract = () => {
     setCounter(prevCount => prevCount - 1)
   }
+  
   //add
   const add = () => {
     setCounter(prevCount => prevCount + 1);
@@ -40,29 +46,22 @@ export default function CounterApp() {
   //set value
    const handleInputNewNum = (event) => {
      event.preventDefault()
-    const setValEvent = event.target.value;
+    const setValEvent = event.target.value;  //Value from input field
     console.log("Input value is now a " + typeof setVal)
     const convertSetValToNum = parseInt(setValEvent, 10); //input converted to number on 10 as the radix
     setNewNum( newNum => newNum = convertSetValToNum );
   };
 
+  
   //set value pass to counter
    const handleBtnClickNewNum = () => {
           event.preventDefault()
-    console.log('>>>>', newNum);
-         console.log(typeof newNum);
-     setCounter(prevCount => prevCount = newNum)
+    console.log('>>>>', newNum);  // testing 1
+         console.log(typeof newNum); // testing 2
+     setCounter(prevCount => prevCount = newNum)  // Assigning set value from input to counter state
   };
 
-  // function Btn() {
-  //   return (
-  //     <>
-  //       <input type="number" max="99999" onChange={getValue} />
-  //       {/*   <button className="counter--set" onClick={e => {setShowBtn(true)}}>Cancel</button> */}
-  //     </>
-  //   )
-  // }
-
+  
   return (
     <main>
      {/* <Navigation /> */}
@@ -88,9 +87,13 @@ export default function CounterApp() {
                   <>
                     <button className="counter--set" onClick={e => { setShowBtn(true) }}>Cancel</button>
                     <br />
+                    
                     <input type="number" className="num_input" onChange={handleInputNewNum} />
+                    
                     <br />
-                    {/**/}    <button className="counter--set" onClick={handleBtnClickNewNum}>Pass Value</button>
+                    
+                    <button className="counter--set" onClick={handleBtnClickNewNum}>Pass Value</button>
+                    
                   </>
                 )
                 }
@@ -100,17 +103,29 @@ export default function CounterApp() {
               <td></td>
             </tr>
             <tr>
-              <td><button className="counter--minus" title="Decrease Value" onClick={subtract}>-</button></td>
+              <td>
+                
+                <button className="counter--minus" title="Decrease Value" onClick={subtract}>-</button>
+              
+              </td>
               <td>
                 <div className="counter--count--background">
                   <h1 className="counter--result">{counter}</h1>
                 </div>
               </td>
-              <td><button className="counter--plus" title="Increase Value" onClick={add}>+</button></td>
+              <td>
+                
+                <button className="counter--plus" title="Increase Value" onClick={add}>+</button>
+              
+              </td>
             </tr>
             <tr>
               <td></td>
-              <td><button className="counter--reset" onClick={reset}>Reset Counter</button></td>
+              <td>
+                
+                <button className="counter--reset" onClick={reset}>Reset Counter</button>
+              
+              </td>
               <td></td>
             </tr>
           </tbody>
