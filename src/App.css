@@ -1,3 +1,34 @@
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav_inner {
+  margin: 0 15px;
+  text-decoration: none;
+  color: black;
+}
+
+.nav_inner:hover{
+  color: #629af4;
+}
+
+.about_page {
+  margin: auto;
+  padding: 7px;
+}
+
+.header1{
+  color: #629af4;
+}
+
 main {
   background-color: black;
   text-align: center;

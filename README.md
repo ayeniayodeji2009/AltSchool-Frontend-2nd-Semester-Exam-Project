@@ -8,3 +8,7 @@ Setup a custom counter hook with increment, decrement, reset, setValue functions
 
 ### Solution to Question above:
 https://zingy-praline-751efc.netlify.app/
+
+
+### Reference:
+https://www.geeksforgeeks.org/page-transition-in-react-js-using-framer-motion/

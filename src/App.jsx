@@ -6,6 +6,11 @@ import SEO from './components/SEO';
 import ErrorBoundary from './components/ErrorBoundary';
 import PageNotFound from './components/PageNotFound';
 import CounterApp from './components/CounterApp';
+import About from './components/About';
+import Contact from './components/Contact';
+import Navigation from './components/Navigation';
+import { AnimatePresence } from 'framer-motion';
+
 //import Counter from './Counter';
 
 
@@ -17,6 +22,7 @@ export default function App() {
 
   return (
     <section>
+      <AnimatePresence>
       <SEO />
       
       <BrowserRouter>
@@ -25,13 +31,25 @@ export default function App() {
           <Route index element={
             <ErrorBoundary>
               <CounterApp />
-              {/* <Counter /> */}
             </ErrorBoundary>
           } />
 
+          <Route path="/about" element={
+            <ErrorBoundary>
+              <About />
+            </ErrorBoundary>
+          } />
+          
+          <Route path="/contact" element={
+            <ErrorBoundary>
+              <Contact />
+            </ErrorBoundary>
+          } />
+          
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
+      </AnimatePresence>
     </section>
   )
 }

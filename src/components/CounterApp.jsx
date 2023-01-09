@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import {BrowserRouter, Routes, Route, NavLink, useNavigate} from "react-router-dom";
 import '../App.css';
-
-
 import Navigation from './Navigation';
+import AnimationTransition from './AnimationTransition';
+
 
 
 
@@ -63,6 +63,10 @@ export default function CounterApp() {
 
   
   return (
+    <>
+    <AnimationTransition>
+    <Navigation />
+
     <main>
      {/* <Navigation /> */}
       <header>
@@ -71,6 +75,7 @@ export default function CounterApp() {
       <section>
         { hideCounter ? (
           <>
+            <p class="header">Click on the button below</p>
           <button className="counter--set show-counter-app" onClick={e => { setHideCounter(false) }}>Show Counter App</button>
           </>
         ) : (
@@ -137,5 +142,7 @@ export default function CounterApp() {
       
       </section>
     </main>
+    </AnimationTransition>
+    </>
   )
 }
