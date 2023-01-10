@@ -36,6 +36,9 @@ main {
 /*   line-height: 100vh */
 }
 
+.app_display{
+  display: flex;
+}
 
 .header{
   color: white;
@@ -47,6 +50,18 @@ main {
   width: 150px;
   height: 150px;
   background-color: #0d54a0;
+  border: 1px solid #000;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bolder;
+  margin: auto;
+}
+
+.counter--count--background_2{
+ border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  background-color: #0da068;
   border: 1px solid #000;
   text-align: center;
   font-size: 40px;

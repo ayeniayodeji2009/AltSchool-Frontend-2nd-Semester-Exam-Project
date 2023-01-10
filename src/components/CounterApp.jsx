@@ -4,6 +4,7 @@ import {BrowserRouter, Routes, Route, NavLink, useNavigate} from "react-router-d
 import '../App.css';
 import Navigation from './Navigation';
 import AnimationTransition from './AnimationTransition';
+import Counter from './Counter';
 
 
 
@@ -13,8 +14,8 @@ export default function CounterApp() {
 
   
   const [counter, setCounter] = useState(0);  //display of counter
-  const [showBtn, setShowBtn] = useState(true);  //set value show/hide button
   const [newNum, setNewNum] = useState(0); //set value new number
+  const [showBtn, setShowBtn] = useState(true);  //set value show/hide button
   const [hideCounter, setHideCounter] = useState(true); //counter app show/hide button
 
 
@@ -66,7 +67,6 @@ export default function CounterApp() {
     <>
     <AnimationTransition>
     <Navigation />
-
     <main>
      {/* <Navigation /> */}
       <header>
@@ -76,7 +76,7 @@ export default function CounterApp() {
         { hideCounter ? (
           <>
             <p class="header">Click on the button below</p>
-          <button className="counter--set show-counter-app" onClick={e => { setHideCounter(false) }}>Show Counter App</button>
+          <button className="counter--set show-counter-app" onClick={e => { setHideCounter(false) }}>Show Counter App made with useState() hook</button>
           </>
         ) : (
       <>
@@ -141,6 +141,9 @@ export default function CounterApp() {
         )}
       
       </section>
+    
+    <Counter />
+    
     </main>
     </AnimationTransition>
     </>

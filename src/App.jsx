@@ -11,7 +11,7 @@ import Contact from './components/Contact';
 import Navigation from './components/Navigation';
 import { AnimatePresence } from 'framer-motion';
 
-//import Counter from './Counter';
+
 
 
 
